@@ -15,9 +15,7 @@ const Stories = () => {
 
   return (
     <>
-      <Center>
-        <Heading>My Tec News </Heading>
-      </Center>
+      
       {hits.length > 0 &&
         hits.map((currPost) => {
           return (

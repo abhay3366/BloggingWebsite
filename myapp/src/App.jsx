@@ -7,8 +7,8 @@ import { Center, Heading } from "@chakra-ui/react";
 const App = () => {
   return (
     <>
-      <Center>
-        <Heading as="h2" size="xl">
+      <Center p={5}>
+        <Heading as="h2" size="md">
           Welcome to Blogging Section
         </Heading>
       </Center>

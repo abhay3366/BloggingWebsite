@@ -21,6 +21,31 @@ const Blogreducer = (state, action) => {
           (currElem) => currElem.objectID != action.payload
         ),
       };
+    case "SEARCH_QUERY":
+      return {
+        ...state,
+        query: action.payload,
+      };
+    case "NEXT_PAGE":
+      let pageNumberInc = state.page+1;
+      if(pageNumberInc>=state.nbPage){
+        pageNumberInc=0
+      }
+      return {
+        ...state,
+        page: pageNumberInc,
+      };
+    case "PREV_PAGE":
+      let pageNumber=state.page;
+      if(pageNumber<=0){
+        pageNumber=0
+      }else{
+        pageNumber=pageNumber+1
+      }
+      return {
+        ...state,
+        page: pageNumber ,
+      };
 
     default:
       break;
