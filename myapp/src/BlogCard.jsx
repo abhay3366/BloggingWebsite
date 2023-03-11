@@ -16,8 +16,8 @@ import { AppContext } from "./Context/Context";
 const BlogCard = ({ title, author, num_comments, url, objectID }) => {
   const {removePost}=useContext(AppContext)
   return (
-    <div>
-      <Card>
+    <div style={{backgroundColor:"red"}}>
+      <Card bg={"red.300"} m={3}>
         <CardBody>
           <Stack divider={<StackDivider />} spacing="4">
             <Box>

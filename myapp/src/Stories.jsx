@@ -7,15 +7,12 @@ import BlogCard from "./BlogCard";
 const Stories = () => {
   const data = useContext(AppContext);
   const { hits, nbPage, isLoading } = data;
-  if(isLoading){
-    return(
-        <h1>Loading...</h1>
-    )
+  if (isLoading) {
+    return <h1>Loading...</h1>;
   }
 
   return (
     <>
-      
       {hits.length > 0 &&
         hits.map((currPost) => {
           return (
