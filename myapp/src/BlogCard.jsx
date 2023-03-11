@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   Card,
   Stack,
@@ -11,12 +11,10 @@ import {
   Button,
   Flex,
 } from "@chakra-ui/react";
+import { AppContext } from "./Context/Context";
 
-// let API = "https://hn.algolia.com/api/v1/search?";
-// let url = `${API}query=${state.query}&page=${state.page}`;
-// console.log(url)
-const BlogCard = ({ title, author, num_comments,url }) => {
-  //   console.log("🚀 ~ file: BlogCard.jsx ~ line 5 ~ BlogCard ~ props", props);
+const BlogCard = ({ title, author, num_comments, url, objectID }) => {
+  const {removePost}=useContext(AppContext)
   return (
     <div>
       <Card>
@@ -31,10 +29,14 @@ const BlogCard = ({ title, author, num_comments,url }) => {
               </Text>
               <Flex gap={15} justifyContent={"space-between"} padding={5}>
                 <Button>
-                  <Link href={url} tabIndex="_blank">Read more</Link>
+                  <Link href={url} tabIndex="_blank">
+                    Read more
+                  </Link>
                 </Button>
                 <Button>
-                  <Link>Remove</Link>
+                  <Link href="#" onClick={()=>removePost(objectID)}>
+                    Remove
+                  </Link>
                 </Button>
               </Flex>
             </Box>

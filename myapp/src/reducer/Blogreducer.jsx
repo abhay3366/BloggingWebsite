@@ -3,16 +3,23 @@ const Blogreducer = (state, action) => {
   console.log("🚀 ~ file: reducer.jsx ~ line 2 ~ Reducer ~ action", action);
   switch (action.type) {
     case "SET_LOADING":
-      return{
+      return {
         ...state,
-        isLoading:true
-      }
+        isLoading: true,
+      };
     case "GET_STORIES":
       return {
         ...state,
-        isLoading:false,
+        isLoading: false,
         hits: action.payload.hitsData,
         nbPage: action.payload.noPage,
+      };
+    case "DELETE_POST":
+      return {
+        ...state,
+        hits: state.hits.filter(
+          (currElem) => currElem.objectID != action.payload
+        ),
       };
 
     default:

@@ -6,7 +6,7 @@ import { Card, Text, CardHeader, CardBody, CardFooter } from "@chakra-ui/react";
 import BlogCard from "./BlogCard";
 const Stories = () => {
   const data = useContext(AppContext);
-  const { hits, nbPage,isLoading } = data;
+  const { hits, nbPage, isLoading } = data;
   if(isLoading){
     return(
         <h1>Loading...</h1>
@@ -26,6 +26,7 @@ const Stories = () => {
               author={currPost.author}
               num_comments={currPost.num_comments}
               url={currPost.url}
+              objectID={currPost.objectID}
             />
           );
         })}
